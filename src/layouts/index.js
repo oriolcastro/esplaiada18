@@ -5,42 +5,17 @@ import Helmet from 'react-helmet'
 import 'font-awesome/css/font-awesome.css'
 import './all.sass'
 
-import {
-  Container,
-  Hero,
-  HeroHeader,
-  HeroBody,
-  HeroFooter,
-  Tabs,
-  TabList,
-  Tab,
-  TabLink,
-} from 'bloomer'
-import AppHeader from '../components/Header'
+
+import Navigation from '../components/Navigation'
 import AppFooter from '../components/Footer'
+
+import Config from '../../meta/config'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Bulma & Bloomer" />
-    <Hero isFullHeight isColor="primary">
-      <HeroHeader>
-        <AppHeader />
-      </HeroHeader>
-
-      <HeroBody>{children()}</HeroBody>
-
-      <HeroFooter>
-        <Container>
-          <Tabs isAlign="centered">
-            <TabList>
-              <Tab>
-                <TabLink>And this at the bottom</TabLink>
-              </Tab>
-            </TabList>
-          </Tabs>
-        </Container>
-      </HeroFooter>
-    </Hero>
+    <Helmet title={Config.siteTitle} />
+    <Navigation />
+    {children()}
     <AppFooter />
   </div>
 )

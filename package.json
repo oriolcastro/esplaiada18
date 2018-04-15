@@ -5,7 +5,7 @@
   "author": "Uri <uri@oriolcastro.me>",
   "dependencies": {
     "bloomer": "^0.6.3",
-    "bulma": "^0.6.2",
+    "bulma": "^0.7.0",
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.39",
