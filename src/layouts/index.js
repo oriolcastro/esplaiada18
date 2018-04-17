@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import 'font-awesome/css/font-awesome.css'
 import './all.sass'
 
-
 import Navigation from '../components/Navigation'
 import AppFooter from '../components/Footer'
 
@@ -15,7 +14,9 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title={Config.siteTitle} />
     <Navigation />
+
     {children()}
+
     <AppFooter />
   </div>
 )

@@ -1,4 +1,20 @@
 @import "~bulma/sass/utilities/initial-variables";
 @import "~bulma/sass/utilities/functions";
 
+// Define the initial variables
+
+$esplac: #ffa400;
+$esplac-invert: findColorInvert($esplac);
+$esplaiada: #007FFF;
+$esplaiada-invert: findColorInvert($esplaiada);
+$family-serif: "Open Sans", "Segoe UI", Arial, sans-serif;
+
+//Set derived variables
+$primary: $esplaiada;
+$primary-invert: $esplaiada-invert;
+$family-primary: $family-serif;
+//$footer-background-color: $grey-lighter;
 @import "~bulma"
+
+//Custom CSS
+.navbar{box-shadow: none;}

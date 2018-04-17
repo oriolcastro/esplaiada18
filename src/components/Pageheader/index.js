@@ -1,13 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Container, Title, Subtitle } from 'bloomer'
+import { Title, Subtitle, Hero , HeroBody, Container } from 'bloomer'
 
 const PageHeader = props => {
   return (
     <div>
-      <Title>{props.title}</Title>
-      <Subtitle>{props.subtitle}</Subtitle>
+      <Hero isColor='primary' isSize='medium'>
+        <HeroBody>
+          <Container hasTextAlign='left'>
+            <Title>{props.title}</Title>
+            <Subtitle>{props.subtitle}</Subtitle>
+          </Container>
+        </HeroBody>
+      </Hero>
     </div>
   )
 

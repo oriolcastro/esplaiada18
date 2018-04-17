@@ -8,20 +8,13 @@ const AppFooter = () => (
         <Columns>
           <Column isFull>
             <p>
-              Made with<Icon hasTextColor="danger" className="fa fa-heart" />
-              at <a href="https://cethyworks.io">cethyworks.io</a>
+              Fet amb <Icon hasTextColor="danger" className="fa fa-heart" /> per a <a href="https://www.esplac.cat" target='_blank'>Esplais Catalans</a>
+            </p>
+            <p>
+              <Icon hasTextColor="primary" className="fa fa-code" /> desenvolupat per <a href="https://okstudio.tech" target='_blank'>OK! Studio</a>
             </p>
           </Column>
         </Columns>
-        <Content isSize="small">
-          <p>
-            The source code is licensed under <a target="_blank">MIT</a>.
-          </p>
-          <p>
-            The website content is licensed under{' '}
-            <a target="_blank">CC ANS 4.0</a>.
-          </p>
-        </Content>
       </Content>
     </Container>
   </Footer>

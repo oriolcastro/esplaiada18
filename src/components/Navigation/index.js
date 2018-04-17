@@ -28,7 +28,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <Navbar className='has-background-info is-fixed-top'>
+      <Navbar className='has-background-primary is-fixed-top'>
         <NavbarBrand className='has-text-white'>
           <NavbarItem onClick={this.closeNav}><Link to='/' className='has-text-white'>Esplaiada 2018</Link></NavbarItem>
           <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav}></NavbarBurger>
