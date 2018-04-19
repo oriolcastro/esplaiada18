@@ -8,12 +8,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-    resolve: `gatsby-source-datocms`,
-    options: {
-      apiToken: `2e8edcb0368913a88bd0a8dd64011f`,
-      preview: false,
-      disableLiveReload: false,
-    },
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `2e8edcb0368913a88bd0a8dd64011f`,
+        preview: false,
+        disableLiveReload: false,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -41,4 +41,4 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],
-};
+}

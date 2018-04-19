@@ -7,8 +7,11 @@ import Pageheader from '../components/Pageheader'
 
 const SongPage = () => (
   <div>
-    <Pageheader title='La Cançó' subtitle="L'energia de l'Esplai uoooo uooo!!!"></Pageheader>
-    
+    <Pageheader
+      title="La Cançó"
+      subtitle="L'energia de l'Esplai uoooo uooo!!!"
+    />
+
     <Section>
       <Container isFluid>
         <Box>A simple box</Box>
@@ -16,7 +19,6 @@ const SongPage = () => (
       </Container>
     </Section>
   </div>
-
 )
 
 export default SongPage

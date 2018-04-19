@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -32,7 +32,7 @@ module.exports = class HTML extends React.Component {
           {this.props.headComponents}
           {css}
         </head>
-        <body {...this.props.bodyAttributes} className='has-navbar-fixed-top'>
+        <body {...this.props.bodyAttributes} className="has-navbar-fixed-top">
           {this.props.preBodyComponents}
           <div
             key={`body`}

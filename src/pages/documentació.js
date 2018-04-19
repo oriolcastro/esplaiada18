@@ -5,10 +5,13 @@ import { Section, Container, Box, Tag, Icon, Columns, Column } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
 
-const DocPage= () => (
+const DocPage = () => (
   <div>
-    <Pageheader title='Documentació' subtitle="Tingues sempre a ma els documents més importants per sobreviure a l'Esplaiada"></Pageheader>
-    
+    <Pageheader
+      title="Documentació"
+      subtitle="Tingues sempre a ma els documents més importants per sobreviure a l'Esplaiada"
+    />
+
     <Section>
       <Container isFluid>
         <Box>A simple box</Box>
@@ -18,7 +21,6 @@ const DocPage= () => (
       </Container>
     </Section>
   </div>
-
 )
 
 export default DocPage

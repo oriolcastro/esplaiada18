@@ -7,7 +7,10 @@ import Pageheader from '../components/Pageheader'
 
 const ActivitiesPage = () => (
   <div>
-    <Pageheader title='Activitats' subtitle='Coneix amb quins esplais comviuràs i no perdis cap activitat'></Pageheader>
+    <Pageheader
+      title="Activitats"
+      subtitle="Coneix amb quins esplais comviuràs i no perdis cap activitat"
+    />
     <Section>
       <Container isFluid>
         <Box>A simple box</Box>
@@ -16,8 +19,6 @@ const ActivitiesPage = () => (
       </Container>
     </Section>
   </div>
-
-
 )
 
 export default ActivitiesPage

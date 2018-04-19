@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 import MyMapComponent from '../Map'
 
@@ -17,16 +17,16 @@ class MapContainer extends Component {
     }, 3000)
   }
 
-//Funció per gestionar el click als macadors.
-// TODO: incloure mostrar el nom de l'espai en fer click o per defecte, estudiar.
+  //Funció per gestionar el click als macadors.
+  // TODO: incloure mostrar el nom de l'espai en fer click o per defecte, estudiar.
 
   handleMarkerClick = () => {
     this.setState({ isMarkerShown: false })
     this.delayedShowMarker()
   }
-  
-// TODO: passa a MyMapComponent un objecte com a props amb les lat-lon dels punts.
-  render(){
+
+  // TODO: passa a MyMapComponent un objecte com a props amb les lat-lon dels punts.
+  render() {
     return (
       <MyMapComponent
         isMarkerShown={this.state.isMarkerShown}
@@ -36,7 +36,6 @@ class MapContainer extends Component {
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
-
     )
   }
 }

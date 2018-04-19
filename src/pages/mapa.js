@@ -8,15 +8,14 @@ import MapContainer from '../components/MapContainer'
 
 const MapPage = () => (
   <div>
-    <Pageheader title='Mapa' subtitle="Descobreix els espais de l'Esplaiada"></Pageheader>
+    <Pageheader title="Mapa" subtitle="Descobreix els espais de l'Esplaiada" />
 
     <Section>
       <Container isFluid>
-        <MapContainer></MapContainer>
+        <MapContainer />
       </Container>
     </Section>
   </div>
-
 )
 
 export default MapPage
