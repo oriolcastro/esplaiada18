@@ -3,5 +3,36 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+//Crea les pàgines dels LLOCS en fer build
 
- // You can delete this file if you're not using it
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allDatoCmsLloc {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allDatoCmsLloc.edges.map(({ node: lloc }) => {
+        createPage({
+          path: `llocs/${lloc.slug}`,
+          component: path.resolve(`./src/templates/lloc.js`),
+          context: {
+            slug: lloc.slug,
+          },
+        })
+      })
+      resolve()
+    })
+  })
+}

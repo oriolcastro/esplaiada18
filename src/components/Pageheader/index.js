@@ -6,7 +6,7 @@ import { Title, Subtitle, Hero, HeroBody, Container } from 'bloomer'
 const PageHeader = props => {
   return (
     <div>
-      <Hero isColor="primary" isSize="medium">
+      <Hero isColor="primary" isSize="small">
         <HeroBody>
           <Container hasTextAlign="left">
             <Title>{props.title}</Title>

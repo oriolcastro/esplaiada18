@@ -15,10 +15,13 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sass": "1.0.19",
     "gatsby-source-datocms": "^1.1.0",
+    "gatsby-source-filesystem": "^1.5.33",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
