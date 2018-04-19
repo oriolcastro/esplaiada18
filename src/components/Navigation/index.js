@@ -34,11 +34,11 @@ class Navigation extends Component {
           <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav}></NavbarBurger>
         </NavbarBrand>
         <NavbarMenu isActive={this.state.isActive}>
-          <NavbarItem><Link onClick={this.onClickNav} to='/horari'>Horari</Link></NavbarItem>
-          <NavbarItem><Link onClick={this.onClickNav} to='/mapa'>Mapa</Link></NavbarItem>
-          <NavbarItem><Link onClick={this.onClickNav} to='/activitats'>Activitats</Link></NavbarItem>
-          <NavbarItem><Link onClick={this.onClickNav} to='/cançó'>Cançó</Link></NavbarItem>
-          <NavbarItem><Link onClick={this.onClickNav} to='/documentació'>Documentació</Link></NavbarItem>
+          <Link onClick={this.onClickNav} to='/horari'><NavbarItem>Horari</NavbarItem></Link>
+          <Link onClick={this.onClickNav} to='/mapa'><NavbarItem>Mapa</NavbarItem></Link>
+          <Link onClick={this.onClickNav} to='/activitats'><NavbarItem>Activitats</NavbarItem></Link>
+          <Link onClick={this.onClickNav} to='/cançó'><NavbarItem>Cançó</NavbarItem></Link>
+          <Link onClick={this.onClickNav} to='/documentació'><NavbarItem>Documentació</NavbarItem></Link>
         </NavbarMenu>
       </Navbar>
     )

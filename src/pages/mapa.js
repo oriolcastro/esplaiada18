@@ -4,22 +4,18 @@ import Link from 'gatsby-link'
 import { Section, Container, Box, Tag, Icon, Columns, Column } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
+import MapContainer from '../components/MapContainer'
 
 const MapPage = () => (
   <div>
-    <Pageheader title='Mapa' subtitle='Descobreix Martorell i els espais de la trobada'></Pageheader>
-    
+    <Pageheader title='Mapa' subtitle="Descobreix els espais de l'Esplaiada"></Pageheader>
+
     <Section>
       <Container isFluid>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
+        <MapContainer></MapContainer>
       </Container>
     </Section>
   </div>
-
-
 
 )
 
