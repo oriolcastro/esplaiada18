@@ -10,6 +10,7 @@ module.exports = {
     'Aplicació web progresiva destinada a totes les monitores participants de a Esplaiada 2018', // Website description used for RSS feeds/meta description tag.
   copyright:
     'Copyright © Esplaiada 2018. Tots els drets reservats. ACTUALITZAR', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#007FFF', // Used for setting manifest and progress theme colors.
+  themeColor: '#4799A3', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffa400', // Used for setting manifest background color.
+  googleanalytics: 'UA-117962044-1', //Google Analytics tracker
 }
