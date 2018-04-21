@@ -38,22 +38,22 @@ class Navigation extends Component {
     return (
       <Navbar className="has-background-primary is-fixed-top">
         <NavbarBrand className="has-text-white">
-          <NavbarItem onClick={this.closeNav}>
-            <Link to="/" className="has-text-white">
-              Esplaiada 2018
-            </Link>
-          </NavbarItem>
           <NavbarBurger
             isActive={this.state.isActive}
             onClick={this.onClickNav}
           />
+          <NavbarItem isDisplay="flex" onClick={this.closeNav}>
+            <Link to="/" className="has-text-white">
+              Esplaiada 2018
+            </Link>
+          </NavbarItem>
         </NavbarBrand>
         <NavbarMenu isActive={this.state.isActive}>
           <Link onClick={this.onClickNav} to="/horari">
             <NavbarItem>Horari</NavbarItem>
           </Link>
-          <Link onClick={this.onClickNav} to="/mapa">
-            <NavbarItem>Mapa</NavbarItem>
+          <Link onClick={this.onClickNav} to="/espais">
+            <NavbarItem>Espais</NavbarItem>
           </Link>
           <Link onClick={this.onClickNav} to="/activitats">
             <NavbarItem>Activitats</NavbarItem>
@@ -61,8 +61,8 @@ class Navigation extends Component {
           <Link onClick={this.onClickNav} to="/cançó">
             <NavbarItem>Cançó</NavbarItem>
           </Link>
-          <Link onClick={this.onClickNav} to="/documentació">
-            <NavbarItem>Documentació</NavbarItem>
+          <Link onClick={this.onClickNav} to="/documents">
+            <NavbarItem>Documents</NavbarItem>
           </Link>
         </NavbarMenu>
       </Navbar>

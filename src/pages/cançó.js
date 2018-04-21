@@ -4,19 +4,13 @@ import Link from 'gatsby-link'
 import { Section, Container, Box, Tag, Icon, Columns, Column } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
+import Videocontainer from '../components/VideoContainer'
 
 const SongPage = () => (
   <div>
-    <Pageheader
-      title="La Cançó"
-      subtitle="L'energia de l'Esplai uoooo uooo!!!"
-    />
-
+    <Pageheader title="La Cançó" subtitle="Som capaces de tot!" />
     <Section>
-      <Container isFluid>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-      </Container>
+      <Videocontainer />
     </Section>
   </div>
 )

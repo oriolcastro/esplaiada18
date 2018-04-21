@@ -9,8 +9,8 @@ import {
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{ lat: 41.47989, lng: 1.914621 }}
+      defaultZoom={16}
+      defaultCenter={{ lat: props.latitude, lng: props.longitude }}
       defaultOptions={{
         disableDefaultUI: false,
         zoomControl: false,
@@ -19,15 +19,10 @@ const MyMapComponent = withScriptjs(
       }}
     >
       {props.isMarkerShown && (
-        <Marker
-          onClick={props.onMarkerClick}
-          position={{ lat: 41.47375, lng: 1.915539 }}
-        />
+        <Marker position={{ lat: props.latitude, lng: props.longitude }} />
       )}
     </GoogleMap>
   ))
 )
 
 export default MyMapComponent
-
-// TODO: Fer un bucle amb tots els Marker amb l'objecte de lat-long que rep per props

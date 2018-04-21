@@ -5,7 +5,7 @@ import { Section, Container, Title } from 'bloomer'
 const IndexPage = () => (
   <Section>
     <Container hasTextAlign="centered">
-      <Title>HOME</Title>
+      <Title>Benvingudes a l'Esplaiada 2018!</Title>
     </Container>
   </Section>
 )
