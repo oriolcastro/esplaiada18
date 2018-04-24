@@ -8,10 +8,11 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-next',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `2e8edcb0368913a88bd0a8dd64011f`,
+        apiToken: config.cmstoken,
         preview: false,
         disableLiveReload: false,
       },
@@ -20,7 +21,7 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `tomato`,
+        color: config.themeColor,
         // Disable the loading spinner.
         showSpinner: false,
       },

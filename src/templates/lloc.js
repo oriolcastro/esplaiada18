@@ -22,7 +22,7 @@ export default ({ data }) => (
           target="_blank"
           isDisplay="flex"
         >
-          <Icon className="fa fa-compass" />
+          <Icon isSize="large" className="fa fa-compass" />
           <p>Direccions fins aquí</p>
         </Button>
       </Container>

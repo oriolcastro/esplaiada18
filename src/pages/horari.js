@@ -17,10 +17,7 @@ import Pageheader from '../components/Pageheader'
 
 const SchedulePage = () => (
   <div>
-    <Pageheader
-      title="Horari"
-      subtitle="Consulta el programa del cap de setmana"
-    />
+    <Pageheader title="Horari" subtitle="Tot el programa del cap de setmana" />
     <Section>
       <Container isFluid>
         <Title isSize="4">Divendres 11</Title>
