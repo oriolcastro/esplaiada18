@@ -11,14 +11,22 @@ const AppFooter = () => (
             <p>
               Fet amb <Icon hasTextColor="danger" className="fa fa-heart" /> per
               a{' '}
-              <OutboundLink href="https://www.esplac.cat" target="_blank">
+              <OutboundLink
+                href="https://www.esplac.cat"
+                target="_blank"
+                rel="noopener"
+              >
                 Esplais Catalans
               </OutboundLink>
             </p>
             <p>
               <Icon hasTextColor="primary" className="fa fa-code" />{' '}
               desenvolupat per{' '}
-              <OutboundLink href="https://okstudio.tech" target="_blank">
+              <OutboundLink
+                href="https://okstudio.tech"
+                target="_blank"
+                rel="noopener"
+              >
                 OK! Studio
               </OutboundLink>
             </p>

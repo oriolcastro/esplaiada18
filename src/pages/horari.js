@@ -15,31 +15,29 @@ import {
 
 import Pageheader from '../components/Pageheader'
 
-const SchedulePage = () => (
+const SchedulePage = ({ data }) => (
   <div>
-    <Pageheader
-      title="Horari"
-      subtitle="Consulta el programa del cap de setmana"
-    />
+    <Pageheader title="Horari" subtitle="Tot el programa del cap de setmana" />
     <Section>
       <Container isFluid>
         <Title isSize="4">Divendres 11</Title>
-        <Box>
-          <Columns isMobile>
-            <Column isSize={3}>
-              <p>19.00 h</p>
-            </Column>
-            <Column>
-              <Title isSize="5">Arribada joves</Title>
-              <Subtitle isSize="6">Casal Parroquial</Subtitle>
-            </Column>
-            <Column isSize={2}>
-              <Tag isColor="success">Test</Tag>
-            </Column>
-          </Columns>
-        </Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
+        {data.allDatoCmsActivitat.edges.map(({ node }, index) => (
+          <Box>
+            <Columns isMobile>
+              <Column isSize={3}>
+                <p>{node.horaInici} h</p>
+              </Column>
+              <Column>
+                <Title isSize="5">{node.titol}</Title>
+                <Subtitle isSize="6">LLOC</Subtitle>
+              </Column>
+              <Column isSize={2}>
+                <Tag isColor="success">Test</Tag>
+              </Column>
+            </Columns>
+          </Box>
+        ))}
+
         <Title isSize="4">Dissabte 12</Title>
         <Box>A simple box</Box>
         <Box>A simple box</Box>
@@ -52,3 +50,17 @@ const SchedulePage = () => (
 )
 
 export default SchedulePage
+
+export const query = graphql`
+  query ActivitatsListQuery {
+    allDatoCmsActivitat {
+      edges {
+        node {
+          titol
+          horaInici(formatString: "HH.mm")
+          descripcio
+        }
+      }
+    }
+  }
+`

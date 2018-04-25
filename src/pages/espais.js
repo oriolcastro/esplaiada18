@@ -12,6 +12,7 @@ import {
   Content,
   Title,
   Subtitle,
+  Button,
 } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
@@ -26,18 +27,26 @@ const MapPage = ({ data }) => (
     <Section>
       {data.allDatoCmsLloc.edges.map(({ node }, index) => (
         <Box key={index}>
-          <Columns>
-            <Column>
-              <Link to={node.slug}>
-                <Title isSize="5">{node.nom}</Title>
-              </Link>
+          <Columns isMobile>
+            <Column isSize="12">
+              <Title isSize="5">{node.nom}</Title>
             </Column>
-            <Column>
+          </Columns>
+          <Columns isMobile isVCentered>
+            <Column isSize="3/4">
+              <p>Que hi pots trobar?</p>
               {node.categoriaEspai.map((category, index) => (
                 <Tag key={index} isColor={category.color}>
                   {category.titol}
                 </Tag>
               ))}
+            </Column>
+            <Column>
+              <Link to={node.slug}>
+                <Button isColor="primary" isOutlined>
+                  +Info
+                </Button>
+              </Link>
             </Column>
           </Columns>
         </Box>

@@ -22,7 +22,7 @@ export default ({ data }) => (
           target="_blank"
           isDisplay="flex"
         >
-          <Icon className="fa fa-compass" />
+          <Icon isSize="large" className="fa fa-compass" />
           <p>Direccions fins aquí</p>
         </Button>
       </Container>
@@ -30,9 +30,9 @@ export default ({ data }) => (
         <Title isSize="5">
           A {data.datoCmsLloc.nom} s'hi faran les seguents activitats:
         </Title>
-        {data.datoCmsLloc.activitatsRealitzades.map(({ titol }) => (
+        {/* {data.datoCmsLloc.activitatsRealitzades.map(({ titol }) => (
           <Box key={titol}>{titol}</Box>
-        ))}
+        ))} */}
       </Container>
     </Section>
     <Section />
@@ -46,9 +46,6 @@ export const query = graphql`
       coordenades {
         latitude
         longitude
-      }
-      activitatsRealitzades {
-        titol
       }
       navigationLink
       seoMetaTags {

@@ -11,6 +11,7 @@ module.exports = {
   copyright:
     'Copyright © Esplaiada 2018. Tots els drets reservats. ACTUALITZAR', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#4799A3', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#ffa400', // Used for setting manifest background color.
+  backgroundColor: '#fff', // Used for setting manifest background color.
   googleanalytics: 'UA-117962044-1', //Google Analytics tracker
+  cmstoken: '2e8edcb0368913a88bd0a8dd64011f', //DatoCMS API Token
 }
