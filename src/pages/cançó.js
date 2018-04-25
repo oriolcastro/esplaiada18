@@ -14,6 +14,7 @@ import {
   Button,
   Content,
 } from 'bloomer'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Pageheader from '../components/Pageheader'
 
@@ -60,6 +61,15 @@ const SongPage = ({ data }) => (
           </Button>
         </Column>
       </Columns>
+      <Content>
+        <OutboundLink
+          href="https://www.ailas.cat/"
+          target="_blank"
+          rel="noopener"
+        >
+          <p>Coneix al grup d'animació autor de la canço de l'Esplaiada</p>
+        </OutboundLink>
+      </Content>
       <Content>
         <Title isSize="6">La lletra de la cançó</Title>
         <div
