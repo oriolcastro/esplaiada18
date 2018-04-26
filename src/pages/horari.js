@@ -14,36 +14,50 @@ import {
 } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
+import HorariList from '../components/HorariList'
 
 const SchedulePage = ({ data }) => (
   <div>
     <Pageheader title="Horari" subtitle="Tot el programa del cap de setmana" />
     <Section>
+      <Title isSize="4">Divendres 11</Title>
       <Container isFluid>
-        <Title isSize="4">Divendres 11</Title>
-        {data.allDatoCmsActivitat.edges.map(({ node }, index) => (
-          <Box>
-            <Columns isMobile>
-              <Column isSize={3}>
-                <p>{node.horaInici} h</p>
-              </Column>
-              <Column>
-                <Title isSize="5">{node.titol}</Title>
-                <Subtitle isSize="6">LLOC</Subtitle>
-              </Column>
-              <Column isSize={2}>
-                <Tag isColor="success">Test</Tag>
-              </Column>
-            </Columns>
-          </Box>
-        ))}
+        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+          const dia = `${node.dia}`
+          if (dia === 'divendres') {
+            return <HorariList key={node.id} props={node} />
+          } else {
+            return
+          }
+        })}
+      </Container>
+    </Section>
 
-        <Title isSize="4">Dissabte 12</Title>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Title isSize="4">Diumenge 13</Title>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
+    <Section>
+      <Title isSize="4">Dissabte 12</Title>
+      <Container isFluid>
+        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+          const dia = `${node.dia}`
+          if (dia === 'dissabte') {
+            return <HorariList key={node.id} props={node} />
+          } else {
+            return
+          }
+        })}
+      </Container>
+    </Section>
+
+    <Section>
+      <Title isSize="4">Diumenge 13</Title>
+      <Container isFluid>
+        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+          const dia = `${node.dia}`
+          if (dia === 'diumenge') {
+            return <HorariList key={node.id} props={node} />
+          } else {
+            return
+          }
+        })}
       </Container>
     </Section>
   </div>
@@ -53,12 +67,10 @@ export default SchedulePage
 
 export const query = graphql`
   query ActivitatsListQuery {
-    allDatoCmsActivitat {
+    allDatoCmsActivitat(sort: { fields: [horaInici], order: ASC }) {
       edges {
         node {
-          titol
-          horaInici(formatString: "HH.mm")
-          descripcio
+          ...HorariListFragment
         }
       }
     }
