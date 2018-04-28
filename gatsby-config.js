@@ -2,13 +2,17 @@ const config = require('./meta/config')
 
 module.exports = {
   siteMetadata: {
-    title: 'Esplaiada 2018',
+    title: config.siteTitle,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-next',
     'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {

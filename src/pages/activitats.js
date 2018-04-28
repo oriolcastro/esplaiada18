@@ -12,11 +12,7 @@ const ActivitiesPage = () => (
       subtitle="Coneix amb quins esplais comviuràs i no perdis cap activitat"
     />
     <Section>
-      <Container isFluid>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-      </Container>
+      <Container isFluid />
     </Section>
   </div>
 )

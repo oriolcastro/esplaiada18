@@ -5,13 +5,30 @@
 
 $esplac: #ffa400;
 $esplac-invert: findColorInvert($esplac);
-$esplaiada: #4799A3;
+$esplaiada: #00A2A7;
 $esplaiada-invert: findColorInvert($esplaiada);
+$esplaiada-groc: #FFD100;
+$esplaiada-vermell: #E30023;
+$esplaiada-verd: #00C193;
+$esplaiada-blau: #00407B;
+$esplaiada-groc-invert: findColorInvert($esplaiada-groc);
+$esplaiada-vermell-invert: findColorInvert($esplaiada-vermell);
+$esplaiada-verd-invert: findColorInvert($esplaiada-verd);
+$esplaiada-blau-invert: findColorInvert($esplaiada-blau);
 $family-serif: "Open Sans", "Segoe UI", Arial, sans-serif;
 
 //Set derived variables
 $primary: $esplaiada;
 $primary-invert: $esplaiada-invert;
+$info: $esplaiada-blau;
+$info-invert: $esplaiada-blau-invert;
+$success: $esplaiada-verd;
+$success-invert: $esplaiada-verd-invert;
+$warning: $esplaiada-groc;
+$warning-invert: $esplaiada-groc-invert;
+$danger: $esplaiada-vermell;
+$danger-invert: $esplaiada-vermell-invert;
+
 $family-primary: $family-serif;
 //$footer-background-color: $grey-lighter;
 @import "~bulma"

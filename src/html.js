@@ -1,4 +1,5 @@
 import React from 'react'
+import favicon from './img/favicon.ico'
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -21,15 +22,16 @@ module.exports = class HTML extends React.Component {
       )
     }
     return (
-      <html {...this.props.htmlAttributes}>
+      <html lang="ca" {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
           />
           {this.props.headComponents}
+          <link rel="shortcut icon" href={favicon} />
           {css}
         </head>
         <body {...this.props.bodyAttributes} className="has-navbar-fixed-top">

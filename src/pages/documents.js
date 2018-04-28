@@ -13,12 +13,7 @@ const DocPage = () => (
     />
 
     <Section>
-      <Container isFluid>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-        <Box>A simple box</Box>
-      </Container>
+      <Container isFluid />
     </Section>
   </div>
 )

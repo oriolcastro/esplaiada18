@@ -12,7 +12,10 @@ import Config from '../../meta/config'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title={Config.siteTitle} />
+    <Helmet>
+      <title>{Config.siteTitle}</title>
+      <meta name="description" content={Config.siteDescription} />
+    </Helmet>
     <Navigation />
 
     {children()}
