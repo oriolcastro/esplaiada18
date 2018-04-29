@@ -1,8 +1,8 @@
 // All the meta info in a single file
 
 module.exports = {
-  siteTitle: 'Esplaiada 2018', // Site title.
-  siteTitleAlt: 'Esplaiada', // Alternative site title for SEO.
+  siteTitle: "Esplaiadapp '18", // Site title.
+  siteTitleAlt: 'Esplaiadapp', // Alternative site title for SEO.
   siteLogo: '/icons/icon-512x512.png', // Logo used for SEO and manifest.
   siteUrl: 'https://esplaiada18.netlify.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-business/.

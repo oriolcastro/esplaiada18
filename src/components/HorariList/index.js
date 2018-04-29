@@ -1,26 +1,64 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 
-import { Box, Tag, Columns, Column, Title, Subtitle } from 'bloomer'
+import {
+  Box,
+  Tag,
+  Columns,
+  Column,
+  Title,
+  Subtitle,
+  Button,
+  Icon,
+} from 'bloomer'
 
-const HorariList = ({ props: { titol, horaInici, descripcio, dia } }) => {
+const HorariList = props => {
   return (
     <Box>
       <Columns isMobile>
         <Column isSize={3}>
-          <p>{horaInici} h</p>
+          <p>{props.horaInici} h</p>
         </Column>
         <Column>
-          <Title isSize="5">{titol}</Title>
-          <Subtitle isSize="6">LLOC</Subtitle>
-        </Column>
-        <Column isSize={2}>
-          <Tag isColor="success">Test</Tag>
+          <Title isSize="5">{props.titol}</Title>
+          {props.hasubicaciosimple ? (
+            <Subtitle isSize="6">
+              <Link to={`/${props.ubicacioSimple.slug}`}>
+                {props.ubicacioSimple.nom}
+              </Link>
+            </Subtitle>
+          ) : (
+            <Subtitle isSize="6">{props.ubicacioMultiple}</Subtitle>
+          )}
         </Column>
       </Columns>
+      {props.hasbutton && (
+        <Columns isMobile>
+          <Column>
+            <Link to={props.buttonlink}>
+              <Button isColor="primary" isPulled="right">
+                <p>{props.buttontext}</p>
+                <Icon className="fa fa-chevron-right" />
+              </Button>
+            </Link>
+          </Column>
+        </Columns>
+      )}
     </Box>
   )
 }
 
+HorariList.propTypes = {
+  titol: PropTypes.string,
+  horaInici: PropTypes.string,
+  hasubicaciosimple: PropTypes.bolean,
+  ubicacioMultiple: PropTypes.string,
+  ubicacioSimple: PropTypes.object,
+  hasbutton: PropTypes.bolean,
+  buttontext: PropTypes.string,
+  buttonlink: PropTypes.string,
+}
 export default HorariList
 
 export const query = graphql`
@@ -29,5 +67,14 @@ export const query = graphql`
     horaInici(formatString: "HH.mm")
     descripcio
     dia
+    hasubicaciosimple
+    ubicacioMultiple
+    ubicacioSimple {
+      nom
+      slug
+    }
+    hasbutton
+    buttontext
+    buttonlink
   }
 `

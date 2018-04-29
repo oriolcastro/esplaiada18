@@ -44,7 +44,7 @@ class Navigation extends Component {
           />
           <NavbarItem isDisplay="flex" onClick={this.closeNav}>
             <Link to="/" className="has-text-white">
-              Esplaiada 2018
+              Esplaiadapp '18
             </Link>
           </NavbarItem>
         </NavbarBrand>

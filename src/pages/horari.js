@@ -25,7 +25,19 @@ const SchedulePage = ({ data }) => (
         {data.allDatoCmsActivitat.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'divendres') {
-            return <HorariList key={node.id} props={node} />
+            return (
+              <HorariList
+                key={node.id}
+                titol={node.titol}
+                horaInici={node.horaInici}
+                hasubicaciosimple={node.hasubicaciosimple}
+                ubicacioMultiple={node.ubicacioMultiple}
+                ubicacioSimple={node.ubicacioSimple}
+                hasbutton={node.hasbutton}
+                buttontext={node.buttontext}
+                buttonlink={node.buttonlink}
+              />
+            )
           } else {
             return
           }
@@ -39,7 +51,19 @@ const SchedulePage = ({ data }) => (
         {data.allDatoCmsActivitat.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'dissabte') {
-            return <HorariList key={node.id} props={node} />
+            return (
+              <HorariList
+                key={node.id}
+                titol={node.titol}
+                horaInici={node.horaInici}
+                hasubicaciosimple={node.hasubicaciosimple}
+                ubicacioMultiple={node.ubicacioMultiple}
+                ubicacioSimple={node.ubicacioSimple}
+                hasbutton={node.hasbutton}
+                buttontext={node.buttontext}
+                buttonlink={node.buttonlink}
+              />
+            )
           } else {
             return
           }
@@ -53,7 +77,19 @@ const SchedulePage = ({ data }) => (
         {data.allDatoCmsActivitat.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'diumenge') {
-            return <HorariList key={node.id} props={node} />
+            return (
+              <HorariList
+                key={node.id}
+                titol={node.titol}
+                horaInici={node.horaInici}
+                hasubicaciosimple={node.hasubicaciosimple}
+                ubicacioMultiple={node.ubicacioMultiple}
+                ubicacioSimple={node.ubicacioSimple}
+                hasbutton={node.hasbutton}
+                buttontext={node.buttontext}
+                buttonlink={node.buttonlink}
+              />
+            )
           } else {
             return
           }
