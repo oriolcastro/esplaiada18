@@ -55,8 +55,8 @@ class Navigation extends Component {
           <Link onClick={this.onClickNav} to="/espais">
             <NavbarItem>Espais</NavbarItem>
           </Link>
-          <Link onClick={this.onClickNav} to="/activitats">
-            <NavbarItem>Activitats</NavbarItem>
+          <Link onClick={this.onClickNav} to="/equips-esplais">
+            <NavbarItem>Equips d'esplais</NavbarItem>
           </Link>
           <Link onClick={this.onClickNav} to="/cançó">
             <NavbarItem>Cançó</NavbarItem>

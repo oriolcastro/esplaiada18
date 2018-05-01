@@ -15,11 +15,10 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
-      resolve: `gatsby-source-datocms`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiToken: config.cmstoken,
-        preview: false,
-        disableLiveReload: false,
+        spaceId: config.spaceId,
+        accessToken: config.APItoken,
       },
     },
     {

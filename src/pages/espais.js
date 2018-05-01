@@ -25,8 +25,8 @@ const MapPage = ({ data }) => (
       subtitle="Descobreix els espais de l'Esplaiada"
     />
     <Section>
-      {data.allDatoCmsLloc.edges.map(({ node }, index) => (
-        <Box key={index}>
+      {data.allContentfulEspais.edges.map(({ node }, i) => (
+        <Box key={node.id}>
           <Columns isMobile>
             <Column isSize="12">
               <Title isSize="5">{node.nom}</Title>
@@ -35,8 +35,8 @@ const MapPage = ({ data }) => (
           <Columns isMobile isVCentered>
             <Column isSize="3/4">
               <p>Que hi pots trobar?</p>
-              {node.categoriaEspai.map((category, index) => (
-                <Tag key={index} isColor={category.color}>
+              {node.categoriaEspai.map((category, i) => (
+                <Tag key={category.id} isColor={category.color}>
                   {category.titol}
                 </Tag>
               ))}
@@ -59,7 +59,7 @@ export default MapPage
 
 export const query = graphql`
   query AllotjamentListQuery {
-    allDatoCmsLloc {
+    allContentfulEspais {
       edges {
         node {
           nom

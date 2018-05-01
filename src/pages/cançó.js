@@ -23,11 +23,11 @@ const SongPage = ({ data }) => (
     <Pageheader title="La Cançó" subtitle="No podràs parar de cantar" />
     <Section>
       <Content>
-        <Title isSize="4">{data.datoCmsSong.titol}</Title>
+        <Title isSize="4">{data.contentfulSong.titol}</Title>
         <div
           className="has-text-justified"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsSong.descripcioNode.childMarkdownRemark.html,
+            __html: data.contentfulSong.descripcio.childMarkdownRemark.html,
           }}
         />
       </Content>
@@ -35,7 +35,7 @@ const SongPage = ({ data }) => (
         <div className="videocontainer">
           <YouTubePlayer
             className="react-player"
-            url={data.datoCmsSong.videoclip.url}
+            url={data.contentfulSong.videoclip}
             loop="true"
             width="100%"
             height="100%"
@@ -52,7 +52,7 @@ const SongPage = ({ data }) => (
         <Column isSize="1/2">
           <Button
             isColor="primary"
-            href={data.datoCmsSong.fitxer.url}
+            href={data.contentfulSong.fitxer.file.url}
             download
             target="_blank"
           >
@@ -75,7 +75,7 @@ const SongPage = ({ data }) => (
         <div
           className="has-text-justified"
           dangerouslySetInnerHTML={{
-            __html: data.datoCmsSong.lletraNode.childMarkdownRemark.html,
+            __html: data.contentfulSong.lletra.childMarkdownRemark.html,
           }}
         />
       </Content>
@@ -87,29 +87,23 @@ export default SongPage
 
 export const query = graphql`
   query SongQuery {
-    datoCmsSong {
+    contentfulSong {
       titol
-      descripcioNode {
+      descripcio {
         childMarkdownRemark {
           html
         }
       }
-      videoclip {
-        url
-        title
-        width
-        height
-        provider
-        providerUid
-        thumbnailUrl
-      }
-      lletraNode {
+      videoclip
+      lletra {
         childMarkdownRemark {
           html
         }
       }
       fitxer {
-        url
+        file {
+          url
+        }
       }
     }
   }

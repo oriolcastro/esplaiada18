@@ -6,10 +6,11 @@ import { Section, Container, Title } from 'bloomer'
 
 const IndexPage = ({ data }) => (
   <div>
+    <Img sizes={data.contentfulHome.heroImage.sizes} />
     <Section>
       <Container hasTextAlign="centered">
-        <Title isSize="3">{data.datoCmsHome.header}</Title>
-        <Img sizes={data.datoCmsHome.heroImage.sizes} />
+        <Title isSize="3">{data.contentfulHome.header}</Title>
+        <Img sizes={data.contentfulHome.heroImage.sizes} />
       </Container>
     </Section>
   </div>
@@ -19,12 +20,11 @@ export default IndexPage
 
 export const query = graphql`
   query HomepageQuery {
-    datoCmsHome {
+    contentfulHome {
       header
       heroImage {
-        url
-        sizes(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        sizes(maxWidth: 800) {
+          ...GatsbyContentfulSizes
         }
       }
     }

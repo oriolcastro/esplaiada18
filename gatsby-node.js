@@ -14,7 +14,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsLloc {
+        allContentfulEspais {
           edges {
             node {
               slug
@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allDatoCmsLloc.edges.map(({ node: lloc }) => {
+      result.data.allContentfulEspais.edges.map(({ node: lloc }) => {
         createPage({
           path: `/${lloc.slug}`,
           component: path.resolve(`./src/templates/lloc.js`),

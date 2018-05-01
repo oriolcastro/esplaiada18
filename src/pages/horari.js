@@ -22,7 +22,7 @@ const SchedulePage = ({ data }) => (
     <Section>
       <Title isSize="4">Divendres 11</Title>
       <Container isFluid>
-        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+        {data.allContentfulHorari.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'divendres') {
             return (
@@ -34,8 +34,9 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttontext}
-                buttonlink={node.buttonlink}
+                buttontext={node.buttonText}
+                buttonlink={node.buttonLink}
+                h
               />
             )
           } else {
@@ -48,7 +49,7 @@ const SchedulePage = ({ data }) => (
     <Section>
       <Title isSize="4">Dissabte 12</Title>
       <Container isFluid>
-        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+        {data.allContentfulHorari.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'dissabte') {
             return (
@@ -60,8 +61,8 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttontext}
-                buttonlink={node.buttonlink}
+                buttontext={node.buttonText}
+                buttonlink={node.buttonLink}
               />
             )
           } else {
@@ -74,7 +75,7 @@ const SchedulePage = ({ data }) => (
     <Section>
       <Title isSize="4">Diumenge 13</Title>
       <Container isFluid>
-        {data.allDatoCmsActivitat.edges.map(({ node }) => {
+        {data.allContentfulHorari.edges.map(({ node }) => {
           const dia = `${node.dia}`
           if (dia === 'diumenge') {
             return (
@@ -86,8 +87,8 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttontext}
-                buttonlink={node.buttonlink}
+                buttontext={node.buttonText}
+                buttonlink={node.buttonLink}
               />
             )
           } else {
@@ -103,7 +104,7 @@ export default SchedulePage
 
 export const query = graphql`
   query ActivitatsListQuery {
-    allDatoCmsActivitat(sort: { fields: [horaInici], order: ASC }) {
+    allContentfulHorari(sort: { fields: [horaInici], order: ASC }) {
       edges {
         node {
           ...HorariListFragment

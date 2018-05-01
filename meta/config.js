@@ -13,4 +13,6 @@ module.exports = {
   backgroundColor: '#fff', // Used for setting manifest background color.
   googleanalytics: 'UA-117962044-1', //Google Analytics tracker
   cmstoken: '2e8edcb0368913a88bd0a8dd64011f', //DatoCMS API Token
+  spaceId: 'vbd9ri8ikut0', //Contentful Space ID
+  APItoken: '5b625d9eb336dd11657072c9ec9552cde90d2e91321cd926da73dece6569b326', //Contenful Delivery API token
 }

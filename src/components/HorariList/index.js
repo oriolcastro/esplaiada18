@@ -18,7 +18,7 @@ const HorariList = props => {
     <Box>
       <Columns isMobile>
         <Column isSize={3}>
-          <p>{props.horaInici} h</p>
+          <p>{props.horaInici}h</p>
         </Column>
         <Column>
           <Title isSize="5">{props.titol}</Title>
@@ -36,9 +36,9 @@ const HorariList = props => {
       {props.hasbutton && (
         <Columns isMobile>
           <Column>
-            <Link to={props.buttonlink}>
+            <Link to={props.buttonLink}>
               <Button isColor="primary" isPulled="right">
-                <p>{props.buttontext}</p>
+                <p>{props.buttonText}</p>
                 <Icon className="fa fa-chevron-right" />
               </Button>
             </Link>
@@ -62,10 +62,9 @@ HorariList.propTypes = {
 export default HorariList
 
 export const query = graphql`
-  fragment HorariListFragment on DatoCmsActivitat {
+  fragment HorariListFragment on ContentfulHorari {
     titol
     horaInici(formatString: "HH.mm")
-    descripcio
     dia
     hasubicaciosimple
     ubicacioMultiple
@@ -74,7 +73,7 @@ export const query = graphql`
       slug
     }
     hasbutton
-    buttontext
-    buttonlink
+    buttonText
+    buttonLink
   }
 `
