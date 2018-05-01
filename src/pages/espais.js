@@ -59,7 +59,7 @@ export default MapPage
 
 export const query = graphql`
   query AllotjamentListQuery {
-    allContentfulEspais {
+    allContentfulEspais(sort: { fields: [nom], order: ASC }) {
       edges {
         node {
           nom
