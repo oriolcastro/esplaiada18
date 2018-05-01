@@ -12,7 +12,4 @@ module.exports = {
   themeColor: '#00A2A7', // Used for setting manifest and progress theme colors.
   backgroundColor: '#fff', // Used for setting manifest background color.
   googleanalytics: 'UA-117962044-1', //Google Analytics tracker
-  cmstoken: '', //DatoCMS API Token
-  spaceId: '', //Contentful Space ID
-  APItoken: '', //Contenful Delivery API token
 }
