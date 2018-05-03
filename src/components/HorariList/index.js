@@ -56,8 +56,8 @@ HorariList.propTypes = {
   ubicacioMultiple: PropTypes.string,
   ubicacioSimple: PropTypes.object,
   hasbutton: PropTypes.bolean,
-  buttontext: PropTypes.string,
-  buttonlink: PropTypes.string,
+  buttonText: PropTypes.string,
+  buttonLink: PropTypes.string,
 }
 export default HorariList
 

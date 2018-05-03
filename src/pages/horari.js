@@ -34,9 +34,8 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttonText}
-                buttonlink={node.buttonLink}
-                h
+                buttonText={node.buttonText}
+                buttonLink={node.buttonLink}
               />
             )
           } else {
@@ -61,8 +60,8 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttonText}
-                buttonlink={node.buttonLink}
+                buttonText={node.buttonText}
+                buttonLink={node.buttonLink}
               />
             )
           } else {
@@ -87,8 +86,8 @@ const SchedulePage = ({ data }) => (
                 ubicacioMultiple={node.ubicacioMultiple}
                 ubicacioSimple={node.ubicacioSimple}
                 hasbutton={node.hasbutton}
-                buttontext={node.buttonText}
-                buttonlink={node.buttonLink}
+                buttonText={node.buttonText}
+                buttonLink={node.buttonLink}
               />
             )
           } else {
