@@ -7,9 +7,9 @@
     "bloomer": "^0.6.3",
     "bulma": "^0.7.0",
     "font-awesome": "^4.7.0",
-    "gatsby": "^1.9.256",
-    "gatsby-image": "^1.0.48",
-    "gatsby-link": "^1.6.41",
+    "gatsby": "^1.9.259",
+    "gatsby-image": "^1.0.51",
+    "gatsby-link": "^1.6.44",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-manifest": "^1.0.21",
     "gatsby-plugin-netlify": "^1.0.19",
@@ -20,7 +20,7 @@
     "gatsby-plugin-sass": "1.0.19",
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-plugin-sitemap": "^1.2.23",
-    "gatsby-source-contentful": "^1.3.48",
+    "gatsby-source-contentful": "^1.3.49",
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-remark": "^1.7.40",
     "gatsby-transformer-sharp": "^1.6.24",
@@ -39,7 +39,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "dotenv": "^5.0.1",
-    "prettier": "^1.12.1"
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.1",
+    "prettier-eslint": "^8.8.1"
   }
 }

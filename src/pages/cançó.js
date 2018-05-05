@@ -71,7 +71,7 @@ const SongPage = ({ data }) => (
         </OutboundLink>
       </Content>
       <Content>
-        <Title isSize="6">La lletra de la cançó</Title>
+        <Title isSize="5">La lletra de la cançó</Title>
         <div
           className="has-text-justified"
           dangerouslySetInnerHTML={{

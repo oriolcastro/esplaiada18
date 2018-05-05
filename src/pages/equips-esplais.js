@@ -11,6 +11,7 @@ import {
   Column,
   Title,
   Content,
+  Button,
 } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
@@ -26,48 +27,26 @@ const EquipsEsplaisPage = ({ data }) => (
       {data.allContentfulEquipsEsplais.edges.map(({ node }, i) => (
         <Box key={node.id}>
           <Title isSize="4">{node.titol}</Title>
-          <Columns>
+          <Columns isMultiline isMobile>
+            {node.esplais.map((esplai, i) => (
+              <Column isSize="1/2" key={i}>
+                <Columns isMobile isGapless isMarginless>
+                  <Column isSize="1/3">
+                    <Icon className="fa fa-group has-text-primary" />
+                  </Column>
+                  <Column>
+                    <p>{esplai}</p>
+                  </Column>
+                </Columns>
+              </Column>
+            ))}
             <Column>
-              <Title isSize="6">Esplais:</Title>
-              <Content>
-                <ul>
-                  {node.esplais.map((esplai, i) => <li key={i}>{esplai}</li>)}
-                </ul>
-              </Content>
-            </Column>
-            <Column>
-              <Title isSize="6">On dormir:</Title>
-              <Content>
-                <p>
-                  Xics: <Link to={node.xics.slug}>{node.xics.nom}</Link>
-                </p>
-                <p>
-                  Petits: <Link to={node.petits.slug}>{node.petits.nom}</Link>
-                </p>
-                <p>
-                  Mitjans:{' '}
-                  <Link to={node.mitjans.slug}>{node.mitjans.nom}</Link>
-                </p>
-                <p>
-                  Grans: <Link to={node.grans.slug}>{node.grans.nom}</Link>
-                </p>
-                <p>
-                  Joves: <Link to={node.joves.slug}>{node.joves.nom}</Link>
-                </p>
-                <p>
-                  Xics: <Link to={node.xics.slug}>{node.xics.nom}</Link>
-                </p>
-              </Content>
-            </Column>
-            <Column>
-              <Title isSize="6">Espai de preparació de l'acte unitari</Title>
-              <Content>
-                <p>
-                  <Link to={node.preparacioActeUnitari.slug}>
-                    {node.preparacioActeUnitari.nom}
-                  </Link>
-                </p>
-              </Content>
+              <Link to={node.slug}>
+                <Button isColor="primary" isDisplay="flex">
+                  <p>Tota la informació de l'{node.titol}</p>
+                  <Icon className="fa fa-chevron-right" />
+                </Button>
+              </Link>
             </Column>
           </Columns>
         </Box>
@@ -84,31 +63,8 @@ export const query = graphql`
       edges {
         node {
           titol
+          slug
           esplais
-          xics {
-            nom
-            slug
-          }
-          petits {
-            nom
-            slug
-          }
-          mitjans {
-            nom
-            slug
-          }
-          grans {
-            nom
-            slug
-          }
-          joves {
-            nom
-            slug
-          }
-          preparacioActeUnitari {
-            nom
-            slug
-          }
         }
       }
     }

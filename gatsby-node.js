@@ -11,7 +11,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
-  return new Promise((resolve, reject) => {
+  const loadEspais = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulEspais {
@@ -35,4 +35,31 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve()
     })
   })
+
+  const loadEquips = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulEquipsEsplais {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allContentfulEquipsEsplais.edges.map(({ node: equip }) => {
+        createPage({
+          path: `/${equip.slug}`,
+          component: path.resolve(`./src/templates/equipesplai.js`),
+          context: {
+            slug: equip.slug,
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
+  return Promise.all([loadEspais, loadEquips])
 }

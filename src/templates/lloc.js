@@ -1,4 +1,3 @@
-// TODO: Donar forma en funció del contingut
 import React from 'react'
 import { Container, Section, Content, Button, Icon, Box, Title } from 'bloomer'
 
@@ -28,9 +27,6 @@ export default ({ data }) => (
         <Title isSize="5">
           A {data.contentfulEspais.nom} s'hi faran les seguents activitats:
         </Title>
-        {/* {data.contentfulEspais.activitatsRealitzades.map(({ titol }) => (
-          <Box key={titol}>{titol}</Box>
-        ))} */}
       </Container>
     </Section>
     <Section />
