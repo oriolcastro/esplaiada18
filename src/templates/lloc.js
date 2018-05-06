@@ -23,13 +23,36 @@ export default ({ data }) => (
           <p>Direccions fins aquí</p>
         </Button>
       </Container>
-      <Container>
-        <Title isSize="5">
-          A {data.contentfulEspais.nom} s'hi faran les seguents activitats:
-        </Title>
+      <Container className="add-margin">
+        {data.contentfulEspais.quiHiFaActivitat !== null && (
+          <Content className="has-text-justified">
+            <Title isSize="5">Qui hi fa activitat?</Title>
+            <div
+              className="has-text-justified"
+              dangerouslySetInnerHTML={{
+                __html:
+                  data.contentfulEspais.quiHiFaActivitat.childMarkdownRemark
+                    .html,
+              }}
+            />
+          </Content>
+        )}
+      </Container>
+      <Container className="add-margin">
+        {data.contentfulEspais.quiHiDorm !== null && (
+          <Content>
+            <Title isSize="5">Qui hi dorm?</Title>
+            <div
+              className="has-text-justified"
+              dangerouslySetInnerHTML={{
+                __html:
+                  data.contentfulEspais.quiHiDorm.childMarkdownRemark.html,
+              }}
+            />
+          </Content>
+        )}
       </Container>
     </Section>
-    <Section />
   </div>
 )
 
@@ -42,6 +65,20 @@ export const query = graphql`
         lon
       }
       navigationLink
+      equips_esplais {
+        titol
+        esplais
+      }
+      quiHiDorm {
+        childMarkdownRemark {
+          html
+        }
+      }
+      quiHiFaActivitat {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
   }
 `

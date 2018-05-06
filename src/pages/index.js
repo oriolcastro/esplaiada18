@@ -9,8 +9,7 @@ const IndexPage = ({ data }) => (
     <Img sizes={data.contentfulHome.heroImage.sizes} />
     <Section>
       <Container hasTextAlign="centered">
-        <Title isSize="3">{data.contentfulHome.header}</Title>
-        <Img sizes={data.contentfulHome.heroImage.sizes} />
+        <Title isSize="1">{data.contentfulHome.header}</Title>
       </Container>
     </Section>
   </div>

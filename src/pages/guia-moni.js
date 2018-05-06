@@ -38,6 +38,14 @@ class GuiaMoniPage extends Component {
             />
           </Content>
           <Content>
+            <Title isSize="4">Acords de convivència</Title>
+            <Link to="/acords-convivencia">
+              <Button isColor="primary" isFullWidth>
+                Consulta els acords de l'Esplaiada '18
+              </Button>
+            </Link>
+          </Content>
+          <Content>
             <Title isSize="4">Telefons de contacte</Title>
             {data.contentfulGuiaMoniPage.contactes.map((contacte, id) => (
               <Content>
@@ -50,7 +58,16 @@ class GuiaMoniPage extends Component {
               </Content>
             ))}
           </Content>
-
+          <Title isSize="4">Incidències més comunes i com afrontar-les</Title>
+          <Content>
+            <ul>
+              {data.contentfulGuiaMoniPage.incidencies.map((incidencia, id) => (
+                <li key={incidencia.id}>
+                  <Link to={incidencia.slug}>{incidencia.tipus}</Link>
+                </li>
+              ))}
+            </ul>
+          </Content>
           <Content>
             <Title isSize="4">Que hem de dur a les motxilles?</Title>
             <Title isSize="6">Motxilla Esplai</Title>
@@ -58,23 +75,6 @@ class GuiaMoniPage extends Component {
             <Title isSize="6">Motxilla Individual</Title>
             <Img sizes={data.contentfulGuiaMoniPage.motxillaIndividual.sizes} />
           </Content>
-
-          <Title isSize="4">Incidències més comunes i com afrontar-les</Title>
-          {data.contentfulGuiaMoniPage.incidencies.map((incidencia, id) => (
-            <Content>
-              <Box key={incidencia.id}>
-                <Title isSize="5">{incidencia.tipus}</Title>
-                <Content>
-                  <div
-                    className="has-text-justified"
-                    dangerouslySetInnerHTML={{
-                      __html: incidencia.procediment.childMarkdownRemark.html,
-                    }}
-                  />
-                </Content>
-              </Box>
-            </Content>
-          ))}
         </Section>
       </div>
     )
@@ -93,6 +93,7 @@ export const query = graphql`
       }
       incidencies {
         tipus
+        slug
         procediment {
           childMarkdownRemark {
             html

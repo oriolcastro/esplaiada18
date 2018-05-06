@@ -15,69 +15,94 @@ import {
 
 import Pageheader from '../components/Pageheader'
 
-export default ({ data }) => (
-  <div>
-    <Pageheader title={data.contentfulEquipsEsplais.titol} />
-    <Section>
-      <Title isSize="6">On dormir:</Title>
-      <Container>
-        <Content>
-          <p>
-            Xics:{' '}
-            <Link to={data.contentfulEquipsEsplais.xics.slug}>
-              {data.contentfulEquipsEsplais.xics.nom}
-            </Link>
-          </p>
-          <p>
-            Petits:{' '}
-            <Link to={data.contentfulEquipsEsplais.petits.slug}>
-              {data.contentfulEquipsEsplais.petits.nom}
-            </Link>
-          </p>
-          <p>
-            Mitjans:{' '}
-            <Link to={data.contentfulEquipsEsplais.mitjans.slug}>
-              {data.contentfulEquipsEsplais.mitjans.nom}
-            </Link>
-          </p>
-          <p>
-            Grans:{' '}
-            <Link to={data.contentfulEquipsEsplais.grans.slug}>
-              {data.contentfulEquipsEsplais.grans.nom}
-            </Link>
-          </p>
-          <p>
-            Joves:{' '}
-            <Link to={data.contentfulEquipsEsplais.joves.slug}>
-              {data.contentfulEquipsEsplais.joves.nom}
-            </Link>
-          </p>
-          <p>
-            Xics:{' '}
-            <Link to={data.contentfulEquipsEsplais.xics.slug}>
-              {data.contentfulEquipsEsplais.xics.nom}
-            </Link>
-          </p>
-        </Content>
+const EquipEsplai = ({ data }) => {
+  return (
+    <div>
+      <Pageheader
+        title={data.contentfulEquipsEsplais.titol}
+        subtitle={data.contentfulEquipsEsplais.esplais.join(', ')}
+      />
+      <Section>
+        <Title isSize="5">Espais assignats per a fer les activitats</Title>
+        <Container>
+          {data.contentfulEquipsEsplais.espaisActivitats.map((espai, id) => (
+            <Content>
+              <Link to={espai.slug}>{espai.nom}</Link>
+              <div
+                className="has-text-justified"
+                dangerouslySetInnerHTML={{
+                  __html: espai.quiHiFaActivitat.childMarkdownRemark.html,
+                }}
+              />
+            </Content>
+          ))}
+          {/* <ul>
+            <li>
+              Xics:{' '}
+              <Link to={data.contentfulEquipsEsplais.xics.slug}>
+            {data.contentfulEquipsEsplais.xics.nom}
+              </Link>
+            </li>
+            <li>
+              Petits:{' '}
+              <Link to={data.contentfulEquipsEsplais.petits.slug}>
+            {data.contentfulEquipsEsplais.petits.nom}
+              </Link>
+            </li>
+            <li>
+              Mitjans:{' '}
+              <Link to={data.contentfulEquipsEsplais.mitjans.slug}>
+            {data.contentfulEquipsEsplais.mitjans.nom}
+              </Link>
+            </li>
+            <li>
+              Grans:{' '}
+              <Link to={data.contentfulEquipsEsplais.grans.slug}>
+            {data.contentfulEquipsEsplais.grans.nom}
+              </Link>
+            </li>
+            <li>
+              Joves:{' '}
+              <Link to={data.contentfulEquipsEsplais.joves.slug}>
+            {data.contentfulEquipsEsplais.joves.nom}
+              </Link>
+            </li>
+          </ul> */}
 
-        <Title isSize="6">Espai de preparació de l'acte unitari</Title>
-        <Content>
-          <p>
-            <Link to={data.contentfulEquipsEsplais.preparacioActeUnitari.slug}>
-              {data.contentfulEquipsEsplais.preparacioActeUnitari.nom}
-            </Link>
-          </p>
-        </Content>
-      </Container>
-    </Section>
-  </div>
-)
+          <Title isSize="5">Espai de preparació de l'acte unitari</Title>
+          <Content>
+            <p>
+              Els esplais de l'{data.contentfulEquipsEsplais.titol} heu d'anar a
+              <Link
+                to={data.contentfulEquipsEsplais.preparacioActeUnitari.slug}
+              >
+                {' '}
+                {data.contentfulEquipsEsplais.preparacioActeUnitari.nom}
+              </Link>
+            </p>
+          </Content>
+        </Container>
+      </Section>
+    </div>
+  )
+}
+
+export default EquipEsplai
 
 export const query = graphql`
   query EquipQuery($slug: String!) {
     contentfulEquipsEsplais(slug: { eq: $slug }) {
       titol
       esplais
+      espaisActivitats {
+        nom
+        slug
+        quiHiFaActivitat {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
       xics {
         nom
         slug

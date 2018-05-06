@@ -61,5 +61,30 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   })
 
-  return Promise.all([loadEspais, loadEquips])
+  const loadIncidencies = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulIncidencia {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allContentfulIncidencia.edges.map(({ node: incidencia }) => {
+        createPage({
+          path: `/${incidencia.slug}`,
+          component: path.resolve(`./src/templates/incidencia.js`),
+          context: {
+            slug: incidencia.slug,
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
+  return Promise.all([loadEspais, loadEquips, loadIncidencies])
 }
