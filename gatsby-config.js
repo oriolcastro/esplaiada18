@@ -16,6 +16,12 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: config.siteUrl,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || '',
