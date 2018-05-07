@@ -36,38 +36,6 @@ const EquipEsplai = ({ data }) => {
               />
             </Content>
           ))}
-          {/* <ul>
-            <li>
-              Xics:{' '}
-              <Link to={data.contentfulEquipsEsplais.xics.slug}>
-            {data.contentfulEquipsEsplais.xics.nom}
-              </Link>
-            </li>
-            <li>
-              Petits:{' '}
-              <Link to={data.contentfulEquipsEsplais.petits.slug}>
-            {data.contentfulEquipsEsplais.petits.nom}
-              </Link>
-            </li>
-            <li>
-              Mitjans:{' '}
-              <Link to={data.contentfulEquipsEsplais.mitjans.slug}>
-            {data.contentfulEquipsEsplais.mitjans.nom}
-              </Link>
-            </li>
-            <li>
-              Grans:{' '}
-              <Link to={data.contentfulEquipsEsplais.grans.slug}>
-            {data.contentfulEquipsEsplais.grans.nom}
-              </Link>
-            </li>
-            <li>
-              Joves:{' '}
-              <Link to={data.contentfulEquipsEsplais.joves.slug}>
-            {data.contentfulEquipsEsplais.joves.nom}
-              </Link>
-            </li>
-          </ul> */}
 
           <Title isSize="5">Espai de preparació de l'acte unitari</Title>
           <Content>
@@ -102,26 +70,6 @@ export const query = graphql`
             html
           }
         }
-      }
-      xics {
-        nom
-        slug
-      }
-      petits {
-        nom
-        slug
-      }
-      mitjans {
-        nom
-        slug
-      }
-      grans {
-        nom
-        slug
-      }
-      joves {
-        nom
-        slug
       }
       preparacioActeUnitari {
         nom
