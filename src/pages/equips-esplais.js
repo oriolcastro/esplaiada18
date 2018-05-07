@@ -44,7 +44,7 @@ const EquipsEsplaisPage = ({ data }) => (
               <Link to={node.slug}>
                 <Button isColor="primary" isDisplay="flex">
                   <p>Tota la informació de l'{node.titol}</p>
-                  <Icon className="fa fa-chevron-right" />
+                  {/* <Icon className="fa fa-chevron-right" /> */}
                 </Button>
               </Link>
             </Column>

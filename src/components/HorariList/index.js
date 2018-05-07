@@ -31,20 +31,16 @@ const HorariList = props => {
           ) : (
             <Subtitle isSize="6">{props.ubicacioMultiple}</Subtitle>
           )}
-        </Column>
-      </Columns>
-      {props.hasbutton && (
-        <Columns isMobile>
-          <Column>
+          {props.hasbutton && (
             <Link to={props.buttonLink}>
-              <Button isColor="primary" isPulled="right">
+              <Button isColor="primary">
                 <p>{props.buttonText}</p>
-                <Icon className="fa fa-chevron-right" />
+                {/* <Icon className="fa fa-chevron-right" /> */}
               </Button>
             </Link>
-          </Column>
-        </Columns>
-      )}
+          )}
+        </Column>
+      </Columns>
     </Box>
   )
 }

@@ -34,7 +34,7 @@ const MapPage = ({ data }) => (
           </Columns>
           <Columns isMobile isVCentered>
             <Column isSize="3/4">
-              <p>Que hi pots trobar?</p>
+              <p>Que hi farem?</p>
               {node.categoriaEspai.map((category, i) => (
                 <Tag key={category.id} isColor={category.color}>
                   {category.titol}
