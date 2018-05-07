@@ -19,7 +19,7 @@ import Pageheader from '../components/Pageheader'
 const EquipsEsplaisPage = ({ data }) => (
   <div>
     <Pageheader
-      title="Equips d'Esplais"
+      title="Equips d'esplais"
       subtitle="Coneix amb quins esplais fas les activitats"
     />
     <Section>
