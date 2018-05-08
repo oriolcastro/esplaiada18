@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: "Esplaiadapp '18", // Site title.
   siteTitleAlt: 'Esplaiadapp', // Alternative site title for SEO.
   siteLogo: '/icons/icon-512x512.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://esplaiada18.netlify.com', // Domain of your website without pathPrefix.
+  siteUrl: 'https://esplaiada.esplac.cat', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-business/.
   siteDescription:
     "Aplicació web progresiva destinada a totes les monitores participants de l'Esplaiada 2018", // Website description used for RSS feeds/meta description tag.
