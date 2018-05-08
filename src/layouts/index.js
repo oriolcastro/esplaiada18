@@ -7,6 +7,7 @@ import './all.sass'
 
 import Navigation from '../components/Navigation'
 import AppFooter from '../components/Footer'
+import AnalyticsComponent from '../components/AnalyticsComponent'
 
 import Config from '../../meta/config'
 
