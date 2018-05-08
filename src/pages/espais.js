@@ -3,15 +3,12 @@ import Link from 'gatsby-link'
 
 import {
   Section,
-  Container,
   Box,
   Tag,
-  Icon,
   Columns,
   Column,
   Content,
   Title,
-  Subtitle,
   Button,
 } from 'bloomer'
 

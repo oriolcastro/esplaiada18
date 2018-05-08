@@ -1,5 +1,7 @@
 import React from 'react'
-import { Container, Section, Content, Button, Icon, Box, Title } from 'bloomer'
+import FaCompass from 'react-icons/lib/fa/compass'
+
+import { Container, Section, Content, Button, Title } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
 import MapContainer from '../components/MapContainer'
@@ -19,7 +21,9 @@ export default ({ data }) => (
           target="_blank"
           isDisplay="flex"
         >
-          <Icon isSize="large" className="fa fa-compass" />
+          <span className="my-icon-container">
+            <FaCompass height="1.25em" width="1.25em" />
+          </span>
           <p>Direccions fins aquí</p>
         </Button>
       </Container>

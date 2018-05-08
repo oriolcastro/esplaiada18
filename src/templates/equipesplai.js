@@ -1,17 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import {
-  Container,
-  Section,
-  Content,
-  Button,
-  Icon,
-  Box,
-  Title,
-  Columns,
-  Column,
-} from 'bloomer'
+import { Container, Section, Content, Title } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import FaFilePdfO from 'react-icons/lib/fa/file-pdf-o'
 
 import {
   Section,
@@ -19,7 +20,7 @@ const IndexPage = ({ data }) => (
     <Img sizes={data.contentfulHome.heroImage.sizes} />
     <Section>
       <Container hasTextAlign="centered" className="add-margin">
-        <Title isSize="1">{data.contentfulHome.header}</Title>
+        <Title isSize="2">{data.contentfulHome.header}</Title>
       </Container>
       <Container>
         <Box>
@@ -30,7 +31,7 @@ const IndexPage = ({ data }) => (
             <Column>
               <Title isSize="6">Centre d'Interés</Title>
               <Subtitle isSize="6">Descarregat la guia</Subtitle>
-              <Container>
+              <Container hasTextAlign="centered">
                 <Button
                   isColor="primary"
                   href={data.contentfulHome.centreInteresGeneral.file.url}
@@ -40,7 +41,9 @@ const IndexPage = ({ data }) => (
                   className="add-margin-button"
                 >
                   <p>CI General</p>
-                  <Icon className="fa fa-file-pdf-o" />
+                  <span className="my-icon-container">
+                    <FaFilePdfO />
+                  </span>
                 </Button>
                 <Button
                   isColor="primary"
@@ -50,7 +53,9 @@ const IndexPage = ({ data }) => (
                   isFullWidth
                 >
                   <p>CI Joves</p>
-                  <Icon className="fa fa-file-pdf-o" />
+                  <span className="my-icon-container">
+                    <FaFilePdfO />
+                  </span>
                 </Button>
               </Container>
             </Column>

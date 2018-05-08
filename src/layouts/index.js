@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import 'font-awesome/css/font-awesome.css'
 import './all.sass'
 
 import Navigation from '../components/Navigation'

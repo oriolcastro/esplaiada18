@@ -1,17 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import {
-  Section,
-  Container,
-  Box,
-  Tag,
-  Icon,
-  Columns,
-  Column,
-  Title,
-  Subtitle,
-} from 'bloomer'
+import { Section, Container, Title } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
 import HorariList from '../components/HorariList'

@@ -1,20 +1,9 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import FaPhone from 'react-icons/lib/fa/phone'
 
-import {
-  Section,
-  Container,
-  Box,
-  Tag,
-  Icon,
-  Columns,
-  Column,
-  Title,
-  Content,
-  Subtitle,
-  Button,
-} from 'bloomer'
+import { Section, Title, Content, Button } from 'bloomer'
 
 import Pageheader from '../components/Pageheader'
 
@@ -50,7 +39,9 @@ class GuiaMoniPage extends Component {
             {data.contentfulGuiaMoniPage.contactes.map((contacte, id) => (
               <Content>
                 <Button href={contacte.link} isFullWidth isColor="primary">
-                  <Icon className="fa fa-phone" />
+                  <span className="my-icon-container">
+                    <FaPhone height="1.25em" width="1.25em" />
+                  </span>
                   <p>
                     {contacte.nom} - {contacte.mobil}
                   </p>

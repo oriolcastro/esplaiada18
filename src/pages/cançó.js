@@ -1,19 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import YouTubePlayer from 'react-player/lib/players/YouTube'
+import FaDownload from 'react-icons/lib/fa/download'
 
-import {
-  Section,
-  Container,
-  Box,
-  Tag,
-  Icon,
-  Columns,
-  Column,
-  Title,
-  Button,
-  Content,
-} from 'bloomer'
+import { Section, Columns, Column, Title, Button, Content } from 'bloomer'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Pageheader from '../components/Pageheader'
@@ -56,7 +46,9 @@ const SongPage = ({ data }) => (
             download
             target="_blank"
           >
-            <Icon className="fa fa-download" />
+            <span className="my-icon-container">
+              <FaDownload height="1.25em" width="1.25m" />
+            </span>
             <p>Baixa't la cançó</p>
           </Button>
         </Column>

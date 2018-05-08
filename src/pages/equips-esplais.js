@@ -1,16 +1,14 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import FaGroup from 'react-icons/lib/fa/group'
 
 import {
   Section,
   Container,
   Box,
-  Tag,
-  Icon,
   Columns,
   Column,
   Title,
-  Content,
   Button,
 } from 'bloomer'
 
@@ -32,7 +30,9 @@ const EquipsEsplaisPage = ({ data }) => (
               <Column isSize="1/2" key={i}>
                 <Columns isMobile isGapless isMarginless>
                   <Column isSize="1/3">
-                    <Icon className="fa fa-group has-text-primary" />
+                    <span className="my-icon-container">
+                      <FaGroup height="1.25em" width="1.25em" fill="#00A2A7" />
+                    </span>
                   </Column>
                   <Column>
                     <p>{esplai}</p>
@@ -44,7 +44,6 @@ const EquipsEsplaisPage = ({ data }) => (
               <Link to={node.slug}>
                 <Button isColor="primary" isDisplay="flex">
                   <p>Tota la informació de l'{node.titol}</p>
-                  {/* <Icon className="fa fa-chevron-right" /> */}
                 </Button>
               </Link>
             </Column>
