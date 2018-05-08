@@ -7,7 +7,7 @@ import './all.sass'
 
 import Navigation from '../components/Navigation'
 import AppFooter from '../components/Footer'
-import AnalyticsComponent from '../components/AnalyticsComponent'
+import AnalyticsComponent from '../components/Analytics'
 
 import Config from '../../meta/config'
 
@@ -38,6 +38,7 @@ const TemplateWrapper = ({ children }) => (
     <div className="my-site-content">{children()}</div>
 
     <AppFooter />
+    <AnalyticsComponent />
   </div>
 )
 
