@@ -25,7 +25,7 @@ const AppFooter = () => (
               <FaCode height="1.25em" width="1.25em" fill="#00A2A7" />{' '}
               desenvolupat per{' '}
               <OutboundLink
-                href="https://okstudio.tech"
+                href="https://www.instagram.com/_okstudio/"
                 target="_blank"
                 rel="noopener"
               >
