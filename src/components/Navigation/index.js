@@ -15,7 +15,7 @@ import {
 class Navigation extends Component {
   constructor(props) {
     super(props)
-    this.state = { navOpen: false, installIcon: false }
+    this.state = { navOpen: false, installIcon: true }
     this.onClickNav = this.onClickNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
     this.toogleInstallIcon = this.toogleInstallIcon.bind(this)
@@ -50,7 +50,7 @@ class Navigation extends Component {
       e.preventDefault()
       // Stash the event so it can be triggered later.
       deferredPrompt = e
-      toogleInstallIcon()
+      this.toogleInstallIcon()
     })
 
     btnInstall.addEventListener('click', e => {
