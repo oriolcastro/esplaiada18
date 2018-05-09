@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import FaCloudDownload from 'react-icons/lib/fa/cloud-download'
+
 import {
   Navbar,
   NavbarBrand,
@@ -13,25 +15,58 @@ import {
 class Navigation extends Component {
   constructor(props) {
     super(props)
-    this.state = { isActive: false }
+    this.state = { navOpen: false, installIcon: false }
     this.onClickNav = this.onClickNav.bind(this)
     this.closeNav = this.closeNav.bind(this)
+    this.toogleInstallIcon = this.toogleInstallIcon.bind(this)
   }
 
   onClickNav() {
     this.setState(prevState => ({
-      isActive: !prevState.isActive,
+      navOpen: !prevState.navOpen,
     }))
   }
   closeNav() {
-    if (this.state.isActive) {
+    if (this.state.navOpen) {
       return this.setState(prevState => ({
-        isActive: !prevState.isActive,
+        navOpen: !prevState.navOpen,
       }))
     }
     return this.setState(prevState => ({
-      isActive: prevState.isActive,
+      navOpen: prevState.navOpen,
     }))
+  }
+  toogleInstallIcon() {
+    this.setState(prevState => ({
+      installIcon: !prevState.installIcon,
+    }))
+  }
+
+  componentDidMount() {
+    let deferredPrompt
+
+    window.addEventListener('beforeinstallprompt', e => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault()
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e
+      toogleInstallIcon()
+    })
+
+    btnInstall.addEventListener('click', e => {
+      // hide our user interface that shows our A2HS button
+      this.toogleInstallIcon() // Show the prompt
+      deferredPrompt.prompt()
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then(choiceResult => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt')
+        } else {
+          console.log('User dismissed the A2HS prompt')
+        }
+        deferredPrompt = null
+      })
+    })
   }
 
   render() {
@@ -39,16 +74,19 @@ class Navigation extends Component {
       <Navbar className="has-background-primary is-fixed-top">
         <NavbarBrand className="has-text-white">
           <NavbarBurger
-            isActive={this.state.isActive}
+            isActive={this.state.navOpen}
             onClick={this.onClickNav}
           />
-          <NavbarItem isDisplay="flex" onClick={this.closeNav}>
+          <NavbarItem onClick={this.closeNav} className="my-navbar-title">
             <Link to="/" className="has-text-white">
               Esplaiadapp '18
             </Link>
           </NavbarItem>
+          <NavbarItem id="btnInstall" isHidden={this.state.installIcon}>
+            <FaCloudDownload width="1.5em" height="1.5em" fill="white" />
+          </NavbarItem>
         </NavbarBrand>
-        <NavbarMenu isActive={this.state.isActive}>
+        <NavbarMenu isActive={this.state.navOpen}>
           <Link onClick={this.onClickNav} to="/horari">
             <NavbarItem>Horari</NavbarItem>
           </Link>
